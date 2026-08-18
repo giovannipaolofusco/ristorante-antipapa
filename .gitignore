@@ -1,0 +1,26 @@
+# --- File di governance (CLAUDE.md §2.3) ---
+CLAUDE.md
+AGENTS.md
+overview.md
+[0-9][0-9]_*.md
+[0-9][0-9]bis_*.md
+MOD_*.md
+UTIL_*.md
+PROMPT_*.md
+PROMEMORIA_*.md
+GUIDA_*.md
+UTIL_*.py
+.claude/
+_bozze/
+sistema-statico/
+
+# --- Ambiente e build (CLAUDE.md §2.2) ---
+.env
+.env.*
+*.log
+node_modules/
+dist/
+
+# --- Sistema operativo / editor ---
+.DS_Store
+Thumbs.db

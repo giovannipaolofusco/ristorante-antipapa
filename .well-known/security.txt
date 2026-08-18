@@ -1,0 +1,4 @@
+Contact: mailto:antipapafondi@gmail.com
+Expires: 2027-08-19T23:59:00.000Z
+Preferred-Languages: it, en
+Canonical: https://antipapafondi.it/.well-known/security.txt

@@ -1,0 +1,19 @@
+# Antipapa
+
+Ristorante nel centro storico di Fondi (LT), aperto il 31 luglio 2024. Cucina italiana di stagione, servizio a pranzo e a cena, mercoledì di riposo.
+
+## Pagine
+
+- [Home](https://antipapafondi.it/): presentazione del ristorante, tre piatti della carta corrente, orari e recapiti.
+- [Menu](https://antipapafondi.it/menu.html): la carta completa divisa in Antipasti, In Mezzo, Paste e Carni, con i codici allergene per ogni piatto e la legenda completa dei quattordici allergeni.
+- [Chi siamo](https://antipapafondi.it/chi-siamo.html): come è nato il locale e come lavora la cucina.
+- [Contatti](https://antipapafondi.it/contatti.html): indirizzo, telefono, email, orari di apertura e modulo di contatto.
+- [Privacy & Cookie Policy](https://antipapafondi.it/privacy.html): informativa sul trattamento dei dati personali e sui cookie.
+
+## Informazioni pratiche
+
+- Indirizzo: Via Ippolito Dei Medici 7, 04022 Fondi (LT), Italia.
+- Telefono: +39 351 432 4634.
+- Email: antipapafondi@gmail.com.
+- Orari: lunedì, martedì, giovedì, venerdì, sabato e domenica, 12:30-15:30 e 19:30-23:00. Mercoledì chiuso.
+- Prenotazioni: per telefono o tramite il modulo nella pagina Contatti.

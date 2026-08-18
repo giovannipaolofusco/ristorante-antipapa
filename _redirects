@@ -1,0 +1,3 @@
+# Nessun redirect attivo: il sito non ha URL precedenti da preservare.
+# Regola da aggiungere qui se una pagina già indicizzata cambia indirizzo
+# (CLAUDE.md §6.8), nella forma:  /vecchio.html  /nuovo.html  301

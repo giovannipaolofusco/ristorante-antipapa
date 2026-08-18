@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img" aria-label="Segnaposto fotografia">
+<rect width="900" height="900" fill="#1E1418"/>
+<g fill="none" stroke="#EF4B2A" stroke-width="3" opacity="0.45">
+<circle cx="450" cy="400" r="150"/><circle cx="450" cy="400" r="96"/>
+</g>
+<text x="450" y="600" font-family="Georgia,serif" font-style="italic" font-size="34" fill="#F7F3EE" text-anchor="middle">la sala</text>
+<text x="450" y="646" font-family="Georgia,serif" font-size="22" fill="#EF4B2A" text-anchor="middle">fotografia da fornire</text>
+</svg>

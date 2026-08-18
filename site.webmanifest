@@ -1,0 +1,22 @@
+{
+  "name": "Antipapa — Beato Ristoro",
+  "short_name": "Antipapa",
+  "description": "Ristorante nel centro storico di Fondi. Cucina e vini di sostanza.",
+  "lang": "it",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F3EE",
+  "theme_color": "#6B1330",
+  "icons": [
+    {
+      "src": "/assets/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

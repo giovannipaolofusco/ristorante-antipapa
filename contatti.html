@@ -30,6 +30,7 @@
 <link rel="preload" href="/assets/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="stylesheet" href="/assets/css/interne.css">
+<link rel="stylesheet" href="/assets/libs/maplibre/maplibre-gl.css">
 <link rel="stylesheet" href="/assets/libs/cookieconsent/cookieconsent.css">
 <script type="application/ld+json">
 {
@@ -129,10 +130,8 @@
           <p><strong>Mercoledì chiuso</strong></p>
         </div>
       </div>
-      <div class="contatti__mappa" role="img" aria-label="Segnaposto della mappa: Via Ippolito Dei Medici 7, Fondi">
-        <p class="contatti__mappa-testo">Via Ippolito Dei Medici 7 &mdash; centro storico di Fondi</p>
-        <p class="contatti__mappa-nota">Qui andrà la mappa self-hostata. Nel frattempo il link "Apri in mappe" qui sopra funziona.</p>
-      </div>
+      <div class="mappa" id="mappa" role="application" aria-label="Mappa della zona: Via Ippolito Dei Medici 7, Fondi"></div>
+      <p class="mappa__didascalia">Siamo nel centro storico, in Via Ippolito Dei Medici 7. <a href="https://www.openstreetmap.org/?mlat=41.35865&amp;mlon=13.42865#map=17/41.35865/13.42865" target="_blank" rel="noopener noreferrer">Apri in mappe</a> per le indicazioni stradali.</p>
     </div>
   </section>
 
@@ -213,5 +212,7 @@
 <script src="/assets/js/cookie.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/modulo.js"></script>
+<script src="/assets/libs/pmtiles/pmtiles.js"></script>
+<script type="module" src="/assets/js/mappa.js"></script>
 </body>
 </html>

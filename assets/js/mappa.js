@@ -1,0 +1,68 @@
+const contenitore = document.getElementById('mappa');
+
+if (contenitore) {
+  const COORDINATE = [13.4286531, 41.3586522];
+  const ZOOM = 16.5;
+
+  const avvia = async () => {
+    const [{ Map, Marker, Popup, NavigationControl, AttributionControl, addProtocol }, stile] = await Promise.all([
+      import('/assets/libs/maplibre/maplibre-gl.mjs'),
+      fetch('/assets/mappa/stile.json').then((r) => r.json())
+    ]);
+
+    stile.sprite = window.location.origin + '/assets/libs/basemaps/sprites/light';
+
+    const protocollo = new pmtiles.Protocol();
+    addProtocol('pmtiles', protocollo.tile);
+
+    const mappa = new Map({
+      container: 'mappa',
+      style: stile,
+      center: COORDINATE,
+      zoom: ZOOM,
+      minZoom: 12,
+      maxZoom: 16,
+      attributionControl: false
+    });
+
+    mappa.addControl(new NavigationControl({ showCompass: false }), 'top-right');
+    mappa.addControl(new AttributionControl({ compact: true }), 'bottom-right');
+
+    const segnaposto = document.createElement('button');
+    segnaposto.type = 'button';
+    segnaposto.className = 'mappa__marchio';
+    segnaposto.setAttribute('aria-label', 'Antipapa, Via Ippolito Dei Medici 7, Fondi — apri i dettagli');
+
+    const marchio = document.createElement('img');
+    marchio.src = '/assets/img/antipapa-logo.jpg';
+    marchio.alt = '';
+    marchio.width = 48;
+    marchio.height = 48;
+    segnaposto.appendChild(marchio);
+
+    const scheda = new Popup({ offset: 34, closeButton: true, maxWidth: '250px' }).setHTML(
+      '<p class="scheda-mappa__nome">Antipapa</p>' +
+      '<p class="scheda-mappa__riga">Via Ippolito Dei Medici 7<br>04022 Fondi (LT)</p>' +
+      '<p class="scheda-mappa__riga"><a href="tel:+393514324634">351 432 4634</a></p>' +
+      '<p class="scheda-mappa__riga"><a href="https://www.openstreetmap.org/?mlat=41.35865&amp;mlon=13.42865#map=17/41.35865/13.42865" target="_blank" rel="noopener noreferrer">Indicazioni stradali</a></p>'
+    );
+
+    new Marker({ element: segnaposto, anchor: 'bottom' })
+      .setLngLat(COORDINATE)
+      .setPopup(scheda)
+      .addTo(mappa);
+
+    mappa.on('load', () => contenitore.classList.add('mappa--pronta'));
+  };
+
+  if ('IntersectionObserver' in window) {
+    const osservatore = new IntersectionObserver((voci) => {
+      if (!voci[0].isIntersecting) return;
+      osservatore.disconnect();
+      avvia();
+    }, { rootMargin: '250px' });
+    osservatore.observe(contenitore);
+  } else {
+    avvia();
+  }
+}

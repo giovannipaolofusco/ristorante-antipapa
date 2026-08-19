@@ -2,8 +2,28 @@ body.bio {
   background: var(--bordeaux);
   color: var(--bianco);
 }
+.bio__alone {
+  position: fixed;
+  z-index: 0;
+  width: 130vw;
+  height: 130vw;
+  max-width: 760px;
+  max-height: 760px;
+  top: -36vw;
+  right: -34vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 75, 42, 0.34) 0%, rgba(239, 75, 42, 0) 68%);
+  animation: bio-respiro 11s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes bio-respiro {
+  0%, 100% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.14) translate(-3%, 4%); }
+}
 
 .bio__interno {
+  position: relative;
+  z-index: 1;
   max-width: 30rem;
   margin: 0 auto;
   padding: var(--sp-4) var(--sp-2) var(--sp-3);
@@ -29,6 +49,24 @@ body.bio {
   font-size: 1.15rem;
   margin: 0.5rem 0 0;
 }
+.bio__anti {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 6.5vw, 2rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: var(--sp-2) 0 0;
+}
+.bio__anti-parola {
+  display: inline-block;
+  border-bottom: 3px solid var(--vermiglio);
+  padding-bottom: 0.06em;
+  opacity: 1;
+  transition: opacity 0.2s var(--curva), transform 0.2s var(--curva);
+}
+.bio__anti-parola--dentro { opacity: 1; transform: none; }
+.bio__anti--attiva .bio__anti-parola:not(.bio__anti-parola--dentro) { opacity: 0; transform: translateY(0.22em); }
+
 .bio__luogo {
   font-size: 0.9rem;
   opacity: 0.85;
@@ -103,4 +141,5 @@ body.bio {
 
 @media (prefers-reduced-motion: reduce) {
   .bio__voce:hover { transform: none; }
+  .bio__alone { animation: none; }
 }

@@ -31,35 +31,39 @@
 <link rel="stylesheet" href="/ristorante-antipapa/assets/css/base.css">
 <link rel="stylesheet" href="/ristorante-antipapa/assets/css/interne.css">
 <link rel="stylesheet" href="/ristorante-antipapa/assets/css/link.css">
+<noscript><style>.js-entra { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body class="bio">
+
+<div class="bio__alone" aria-hidden="true"></div>
 
 <main class="bio__interno" id="contenuto">
 
   <header class="bio__testata">
-    <img class="bio__logo" src="/ristorante-antipapa/assets/img/antipapa-logo.jpg" alt="Antipapa, ristorante a Fondi" width="92" height="92">
-    <h1 class="bio__nome">Antipapa</h1>
-    <p class="bio__payoff">Beato Ristoro &mdash; Cucina e Vini di Sostanza</p>
-    <p class="bio__luogo">Via Ippolito Dei Medici 7 &middot; Fondi (LT)</p>
+    <img class="bio__logo js-entra ritardo-0" src="/ristorante-antipapa/assets/img/antipapa-logo.jpg" alt="Antipapa, ristorante a Fondi" width="92" height="92">
+    <h1 class="bio__nome js-entra ritardo-80">Antipapa</h1>
+    <p class="bio__payoff js-entra ritardo-160">Beato Ristoro &mdash; Cucina e Vini di Sostanza</p>
+    <p class="bio__anti js-entra ritardo-240" data-parole='["Esperto","Lentezza","Routine"]'>Anti <span class="bio__anti-parola">Esperto</span></p>
+    <p class="bio__luogo js-entra ritardo-300">Via Ippolito Dei Medici 7 &middot; Fondi (LT)</p>
   </header>
 
   <nav class="bio__lista" aria-label="Collegamenti principali">
-    <a class="bio__voce bio__voce--primaria" href="/ristorante-antipapa/">Il sito</a>
-    <a class="bio__voce" href="/ristorante-antipapa/menu.html">Il menu</a>
-    <a class="bio__voce" href="tel:+393514324634">Prenota &mdash; 351 432 4634</a>
-    <a class="bio__voce" href="https://wa.me/393514324634" target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp</a>
-    <a class="bio__voce" href="https://www.instagram.com/antipapafondi/" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a class="bio__voce" href="https://www.facebook.com/share/1EF5xgSx8J/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a class="bio__voce bio__voce--primaria js-entra ritardo-320" href="/ristorante-antipapa/">Il sito</a>
+    <a class="bio__voce js-entra ritardo-380" href="/ristorante-antipapa/menu.html">Il menu</a>
+    <a class="bio__voce js-entra ritardo-440" href="tel:+393514324634">Prenota &mdash; 351 432 4634</a>
+    <a class="bio__voce js-entra ritardo-500" href="https://wa.me/393514324634" target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp</a>
+    <a class="bio__voce js-entra ritardo-600" href="https://www.instagram.com/antipapafondi/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a class="bio__voce js-entra ritardo-720" href="https://www.facebook.com/share/1EF5xgSx8J/" target="_blank" rel="noopener noreferrer">Facebook</a>
   </nav>
 
-  <section class="bio__blocco" aria-labelledby="titolo-orari">
+  <section class="bio__blocco js-entra ritardo-0" aria-labelledby="titolo-orari">
     <h2 class="bio__titolo" id="titolo-orari">Quando siamo aperti</h2>
     <p class="bio__riga"><span>Lun, mar, gio, ven, sab, dom</span> <span>12:30&ndash;15:30 &middot; 19:30&ndash;23:00</span></p>
     <p class="bio__riga"><span>Mercoled&igrave;</span> <span>chiuso</span></p>
     <p class="bio__nota">Ad agosto il Beato Pranzo si riposa: si fa solo cena, 19:30&ndash;23:00.</p>
   </section>
 
-  <section class="bio__blocco" aria-labelledby="titolo-dove">
+  <section class="bio__blocco js-entra ritardo-0" aria-labelledby="titolo-dove">
     <h2 class="bio__titolo" id="titolo-dove">Dove siamo</h2>
     <div class="mappa" id="mappa" role="application" aria-label="Mappa della zona: Via Ippolito Dei Medici 7, Fondi"></div>
     <p class="mappa__didascalia">Siamo nel centro storico. <a href="https://www.openstreetmap.org/?mlat=41.35865&amp;mlon=13.42865#map=17/41.35865/13.42865" target="_blank" rel="noopener noreferrer">Apri in mappe</a> per le indicazioni stradali.</p>
@@ -72,6 +76,8 @@
 
 </main>
 
+<script src="/ristorante-antipapa/assets/js/main.js"></script>
+<script src="/ristorante-antipapa/assets/js/link.js"></script>
 <script src="/ristorante-antipapa/assets/libs/pmtiles/pmtiles.js"></script>
 <script type="module" src="/ristorante-antipapa/assets/js/mappa.js"></script>
 </body>

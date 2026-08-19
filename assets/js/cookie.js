@@ -28,7 +28,7 @@ CookieConsent.run({
       it: {
         consentModal: {
           title: 'Questo sito usa solo cookie tecnici',
-          description: 'Usiamo un unico cookie, che serve a ricordare questa tua scelta e a non riproporti il banner ad ogni visita. Non usiamo cookie di profilazione, non raccogliamo statistiche e non carichiamo contenuti di terze parti. Trovi tutto nella <a href="/privacy.html">Privacy &amp; Cookie Policy</a>.',
+          description: 'Usiamo un unico cookie, che serve a ricordare questa tua scelta e a non riproporti il banner ad ogni visita. Non usiamo cookie di profilazione, non raccogliamo statistiche e non carichiamo contenuti di terze parti. Trovi tutto nella <a href="/ristorante-antipapa/privacy.html">Privacy &amp; Cookie Policy</a>.',
           acceptAllBtn: 'Accetta',
           acceptNecessaryBtn: 'Rifiuta',
           showPreferencesBtn: 'Gestisci preferenze',
@@ -59,7 +59,7 @@ CookieConsent.run({
             },
             {
               title: 'I tuoi diritti',
-              description: 'Puoi rivedere questa scelta in qualsiasi momento dal pulsante in fondo alla <a href="/privacy.html">Privacy &amp; Cookie Policy</a>, e cancellare i cookie già memorizzati dalle impostazioni del browser.'
+              description: 'Puoi rivedere questa scelta in qualsiasi momento dal pulsante in fondo alla <a href="/ristorante-antipapa/privacy.html">Privacy &amp; Cookie Policy</a>, e cancellare i cookie già memorizzati dalle impostazioni del browser.'
             }
           ]
         }
@@ -67,7 +67,7 @@ CookieConsent.run({
       en: {
         consentModal: {
           title: 'This site uses technical cookies only',
-          description: 'We use a single cookie, which remembers this choice of yours so the banner is not shown to you on every visit. We use no profiling cookies, we collect no analytics and we load no third-party content. It is all set out in our <a href="/en/privacy-policy.html">Privacy &amp; Cookie Policy</a>.',
+          description: 'We use a single cookie, which remembers this choice of yours so the banner is not shown to you on every visit. We use no profiling cookies, we collect no analytics and we load no third-party content. It is all set out in our <a href="/ristorante-antipapa/en/privacy-policy.html">Privacy &amp; Cookie Policy</a>.',
           acceptAllBtn: 'Accept',
           acceptNecessaryBtn: 'Decline',
           showPreferencesBtn: 'Manage preferences',
@@ -98,7 +98,7 @@ CookieConsent.run({
             },
             {
               title: 'Your rights',
-              description: 'You can review this choice at any time from the button at the foot of the <a href="/en/privacy-policy.html">Privacy &amp; Cookie Policy</a>, and delete cookies already stored through your browser settings.'
+              description: 'You can review this choice at any time from the button at the foot of the <a href="/ristorante-antipapa/en/privacy-policy.html">Privacy &amp; Cookie Policy</a>, and delete cookies already stored through your browser settings.'
             }
           ]
         }

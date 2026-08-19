@@ -6,11 +6,11 @@ if (contenitore) {
 
   const avvia = async () => {
     const [{ Map, Marker, Popup, NavigationControl, AttributionControl, addProtocol }, stile] = await Promise.all([
-      import('/assets/libs/maplibre/maplibre-gl.mjs'),
-      fetch('/assets/mappa/stile.json').then((r) => r.json())
+      import('/ristorante-antipapa/assets/libs/maplibre/maplibre-gl.mjs'),
+      fetch('/ristorante-antipapa/assets/mappa/stile.json').then((r) => r.json())
     ]);
 
-    stile.sprite = window.location.origin + '/assets/libs/basemaps/sprites/light';
+    stile.sprite = window.location.origin + '/ristorante-antipapa/assets/libs/basemaps/sprites/light';
 
     const protocollo = new pmtiles.Protocol();
     addProtocol('pmtiles', protocollo.tile);
@@ -37,7 +37,7 @@ if (contenitore) {
       : 'Antipapa, Via Ippolito Dei Medici 7, Fondi — apri i dettagli');
 
     const marchio = document.createElement('img');
-    marchio.src = '/assets/img/antipapa-logo.jpg';
+    marchio.src = '/ristorante-antipapa/assets/img/antipapa-logo.jpg';
     marchio.alt = '';
     marchio.width = 48;
     marchio.height = 48;

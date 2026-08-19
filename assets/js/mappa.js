@@ -15,6 +15,19 @@ if (contenitore) {
     const protocollo = new pmtiles.Protocol();
     addProtocol('pmtiles', protocollo.tile);
 
+    const archivio = stile.sources.protomaps.url.replace('pmtiles://', '');
+    const assaggio = await fetch(archivio, { headers: { Range: 'bytes=0-15' } });
+
+    if (assaggio.status !== 206) {
+      const copia = await assaggio.blob();
+      protocollo.add(new pmtiles.PMTiles({
+        getKey: () => archivio,
+        getBytes: async (inizio, lunghezza) => ({
+          data: await copia.slice(inizio, inizio + lunghezza).arrayBuffer()
+        })
+      }));
+    }
+
     const mappa = new Map({
       container: 'mappa',
       style: stile,
@@ -56,6 +69,20 @@ if (contenitore) {
       .setLngLat(COORDINATE)
       .setPopup(scheda)
       .addTo(mappa);
+
+    let sorgentePronta = false;
+    let rinunciato = false;
+
+    mappa.on('sourcedata', (evento) => {
+      if (evento.sourceId === 'protomaps' && evento.isSourceLoaded) sorgentePronta = true;
+    });
+
+    mappa.on('error', (evento) => {
+      if (sorgentePronta || rinunciato) return;
+      if (evento && evento.sourceId && evento.sourceId !== 'protomaps') return;
+      rinunciato = true;
+      contenitore.remove();
+    });
 
     mappa.on('load', () => contenitore.classList.add('mappa--pronta'));
   };

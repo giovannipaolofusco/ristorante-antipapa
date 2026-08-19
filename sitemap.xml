@@ -36,7 +36,7 @@
   <url>
     <loc>https://antipapafondi.it/privacy.html</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://antipapafondi.it/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://antipapafondi.it/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://antipapafondi.it/en/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://antipapafondi.it/privacy.html"/>
     <lastmod>2026-08-19</lastmod>
     <priority>0.3</priority>
@@ -74,9 +74,9 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://antipapafondi.it/en/privacy-policy.html</loc>
+    <loc>https://antipapafondi.it/en/privacy.html</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://antipapafondi.it/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://antipapafondi.it/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://antipapafondi.it/en/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://antipapafondi.it/privacy.html"/>
     <lastmod>2026-08-19</lastmod>
     <priority>0.3</priority>

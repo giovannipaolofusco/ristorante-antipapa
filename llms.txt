@@ -16,7 +16,7 @@ Ristorante nel centro storico di Fondi (LT), aperto il 31 luglio 2024. Cucina it
 - [Menu (EN)](https://antipapafondi.it/en/menu.html): the full menu with allergen codes for every dish and the complete key to the fourteen allergens.
 - [About us (EN)](https://antipapafondi.it/en/about-us.html): how the place started and how the kitchen works.
 - [Contact (EN)](https://antipapafondi.it/en/contact.html): address, phone, email, opening hours, map and contact form.
-- [Privacy & Cookie Policy (EN)](https://antipapafondi.it/en/privacy-policy.html): information on the processing of personal data and on cookies.
+- [Privacy & Cookie Policy (EN)](https://antipapafondi.it/en/privacy.html): information on the processing of personal data and on cookies.
 
 ## Informazioni pratiche
 

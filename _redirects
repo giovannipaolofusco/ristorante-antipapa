@@ -1,3 +1,9 @@
 # Nessun redirect attivo: il sito non ha URL precedenti da preservare.
 # Regola da aggiungere qui se una pagina già indicizzata cambia indirizzo
 # (CLAUDE.md §6.8), nella forma:  /vecchio.html  /nuovo.html  301
+
+# Rinomina del 19/08/2026: l'informativa inglese usava lo slug idiomatico
+# `privacy-policy.html`, che CLAUDE.md §6.4 elenca fra le varianti vietate.
+# La pagina non era ancora indicizzata sul dominio definitivo, quindi la regola
+# e' una rete di sicurezza per i link gia' condivisi, non un obbligo.
+/en/privacy-policy.html  /en/privacy.html  301

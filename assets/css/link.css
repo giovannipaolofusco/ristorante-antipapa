@@ -1,0 +1,106 @@
+body.bio {
+  background: var(--bordeaux);
+  color: var(--bianco);
+}
+
+.bio__interno {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: var(--sp-4) var(--sp-2) var(--sp-3);
+}
+
+.bio__testata { text-align: center; margin-bottom: var(--sp-4); }
+.bio__logo {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  margin: 0 auto var(--sp-2);
+}
+.bio__nome {
+  font-size: clamp(2.6rem, 13vw, 3.6rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--vermiglio);
+}
+.bio__payoff {
+  font-family: var(--corsivo);
+  font-style: italic;
+  font-size: 1.15rem;
+  margin: 0.5rem 0 0;
+}
+.bio__luogo {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: 0.35rem 0 0;
+}
+
+.bio__lista {
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: var(--sp-4);
+}
+.bio__voce {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.95rem 1.2rem;
+  border: 2px solid var(--bianco);
+  border-radius: 999px;
+  transition: transform 0.25s var(--curva), background-color 0.2s ease;
+}
+.bio__voce:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.12);
+}
+.bio__voce--primaria {
+  background: var(--vermiglio);
+  border-color: var(--vermiglio);
+  color: var(--inchiostro);
+  font-size: 1.1rem;
+  padding: 1.15rem 1.2rem;
+}
+.bio__voce--primaria:hover {
+  background: var(--vermiglio);
+  box-shadow: 0 10px 24px rgba(239, 75, 42, 0.35);
+}
+
+.bio__blocco { margin-bottom: var(--sp-4); }
+.bio__titolo {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: var(--vermiglio);
+  margin-bottom: var(--sp-2);
+}
+.bio__riga {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.2rem 1rem;
+  margin: 0;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+.bio__riga span:last-child { font-weight: 700; }
+.bio__nota {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: var(--sp-2) 0 0;
+}
+
+.bio__pie {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: var(--sp-3);
+}
+.bio__legale {
+  font-size: 0.78rem;
+  opacity: 0.8;
+  margin: 0 0 0.6rem;
+}
+.bio__privacy { font-size: 0.9rem; margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bio__voce:hover { transform: none; }
+}

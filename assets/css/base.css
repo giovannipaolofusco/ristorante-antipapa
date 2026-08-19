@@ -81,11 +81,17 @@ h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; }
   opacity: 0;
   transform: translateY(26px);
   transition:
-    opacity 0.75s var(--curva) var(--ritardo, 0ms),
-    transform 0.75s var(--curva) var(--ritardo, 0ms);
+    opacity 0.45s var(--curva),
+    transform 0.45s var(--curva);
   will-change: opacity, transform;
 }
-.js-entra--dentro { opacity: 1; transform: none; }
+.js-entra--dentro {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.75s var(--curva) var(--ritardo, 0ms),
+    transform 0.75s var(--curva) var(--ritardo, 0ms);
+}
 .js-entra--sinistra { transform: translate3d(-40px, 12px, 0); }
 .js-entra--destra { transform: translate3d(40px, 12px, 0); }
 .js-entra--sinistra.js-entra--dentro,
@@ -247,6 +253,7 @@ h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; }
 
 @media (prefers-reduced-motion: reduce) {
   .js-entra,
+  .js-entra--dentro,
   .js-entra--sinistra,
   .js-entra--destra { opacity: 1; transform: none; transition: none; }
   .bottone:hover { transform: none; }

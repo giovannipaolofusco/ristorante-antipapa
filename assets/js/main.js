@@ -15,21 +15,25 @@ const motoRidotto = window.matchMedia('(prefers-reduced-motion: reduce)').matche
 if (motoRidotto || !('IntersectionObserver' in window)) {
   daAnimare.forEach((elemento) => elemento.classList.add('js-entra--dentro'));
 } else {
-  const sopraLaPiega = (elemento) => elemento.getBoundingClientRect().top < window.innerHeight;
+  const SOGLIA = 0.15;
+  const MARGINE_BASSO = 0.1;
+  const sopraLaPiega = (elemento) =>
+    elemento.getBoundingClientRect().top < window.innerHeight * (1 - MARGINE_BASSO);
+  const piuAltoDelloSchermo = (voce) =>
+    voce.rootBounds !== null && voce.boundingClientRect.height > voce.rootBounds.height * 0.9;
 
   const osservatore = new IntersectionObserver((voci) => {
     voci.forEach((voce) => {
-      if (!voce.isIntersecting) return;
-      voce.target.classList.add('js-entra--dentro');
-      osservatore.unobserve(voce.target);
+      if (voce.intersectionRatio >= SOGLIA || (voce.isIntersecting && piuAltoDelloSchermo(voce))) {
+        voce.target.classList.add('js-entra--dentro');
+      } else if (!voce.isIntersecting) {
+        voce.target.classList.remove('js-entra--dentro');
+      }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  }, { threshold: [0, SOGLIA], rootMargin: `0px 0px -${MARGINE_BASSO * 100}% 0px` });
 
   daAnimare.forEach((elemento) => {
-    if (sopraLaPiega(elemento)) {
-      elemento.classList.add('js-entra--dentro');
-      return;
-    }
+    if (sopraLaPiega(elemento)) elemento.classList.add('js-entra--dentro');
     osservatore.observe(elemento);
   });
 }

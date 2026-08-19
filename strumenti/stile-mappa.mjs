@@ -6,8 +6,12 @@
 import { writeFileSync } from 'node:fs';
 import { layers, namedFlavor } from '@protomaps/basemaps';
 
+// La licenza ODbL dei dati OpenStreetMap richiede il credito nella forma
+// «© OpenStreetMap contributors», non il solo nome: il nome da solo non
+// assolve l'obbligo, ed e' il credito che deve restare visibile nel riquadro
+// della mappa senza che l'utente debba aprire nulla.
 const ATTRIBUZIONE =
-  '<a href="https://openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>' +
+  '&copy; <a href="https://openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors' +
   ' &middot; <a href="https://protomaps.com" target="_blank" rel="noopener noreferrer">Protomaps</a>';
 
 // @protomaps/basemaps 5.7.2 referenzia l'icona "townhall", che non esiste in nessuno

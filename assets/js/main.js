@@ -37,3 +37,14 @@ if (motoRidotto || !('IntersectionObserver' in window)) {
     osservatore.observe(elemento);
   });
 }
+
+const nastro = document.querySelector('.nastro');
+const pausaNastro = document.querySelector('.nastro__pausa');
+
+if (nastro && pausaNastro) {
+  pausaNastro.addEventListener('click', () => {
+    const ferma = nastro.classList.toggle('nastro--ferma');
+    pausaNastro.setAttribute('aria-pressed', String(ferma));
+    pausaNastro.textContent = ferma ? 'Riprendi' : 'Pausa';
+  });
+}

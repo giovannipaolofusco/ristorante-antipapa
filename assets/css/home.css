@@ -68,6 +68,63 @@
   margin: 0;
 }
 
+.nastro {
+  position: relative;
+  background: var(--bordeaux);
+  color: var(--bianco);
+  padding: var(--sp-3) 0;
+}
+.nastro__finestra { overflow: hidden; }
+.nastro__pista {
+  display: flex;
+  width: max-content;
+  animation: nastro-scorre 38s linear infinite;
+}
+.nastro:hover .nastro__pista,
+.nastro:focus-within .nastro__pista,
+.nastro--ferma .nastro__pista { animation-play-state: paused; }
+@keyframes nastro-scorre {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.nastro__gruppo {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nastro__voce {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding-right: var(--sp-3);
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 4vw, 1.7rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.nastro__segno { color: var(--vermiglio); font-size: 1.1em; line-height: 1; }
+.nastro__pausa {
+  position: absolute;
+  right: var(--sp-2);
+  bottom: 0.35rem;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  color: var(--bianco);
+  font-family: var(--testo);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.6rem;
+  cursor: pointer;
+}
+.nastro__pausa:hover { border-color: var(--bianco); }
+
+@media (prefers-reduced-motion: reduce) {
+  .nastro__pista { animation: none; }
+}
+
 .anti { background: var(--inchiostro); color: var(--avorio); padding: var(--sp-5) var(--sp-2); }
 .anti__interno { max-width: var(--larghezza); margin: 0 auto; }
 .anti .titolo-sezione { color: var(--vermiglio); }

@@ -45,6 +45,21 @@
   padding-left: var(--sp-3);
   margin: var(--sp-4) 0;
 }
+.prosa__tabella-wrap { overflow-x: auto; margin: 0 0 var(--sp-2); }
+.prosa__tabella { width: 100%; min-width: 32rem; border-collapse: collapse; font-size: 0.92rem; }
+.prosa__tabella caption {
+  text-align: left;
+  font-size: 0.85rem;
+  color: rgba(30, 20, 24, 0.7);
+  padding-bottom: 0.5rem;
+}
+.prosa__tabella th, .prosa__tabella td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem 0.9rem 0.6rem 0;
+  border-bottom: 1px solid var(--bordo);
+}
+.prosa__tabella th { color: var(--bordeaux); font-weight: 700; }
 .prosa__aggiornamento {
   font-size: 0.85rem;
   color: rgba(30, 20, 24, 0.7);

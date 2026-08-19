@@ -1,7 +1,7 @@
 CookieConsent.run({
   cookie: {
     name: 'cc_cookie',
-    expiresAfterDays: 182
+    expiresAfterDays: 186
   },
   guiOptions: {
     consentModal: {

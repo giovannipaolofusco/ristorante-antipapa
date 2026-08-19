@@ -13,6 +13,9 @@ UTIL_*.py
 .claude/
 _bozze/
 sistema-statico/
+# sistema-fullstack/ non e' elencato di proposito: questo progetto e' statico e
+# quella cartella non esiste ne' esistera' qui. Scelta del 19/08/2026: se un audit
+# la segnala come pattern mancante, e' un rilievo gia' valutato e scartato.
 
 # --- Ambiente e build (CLAUDE.md §2.2) ---
 .env

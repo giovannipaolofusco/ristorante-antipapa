@@ -105,6 +105,7 @@ body.bio {
 }
 
 .bio__blocco { margin-bottom: var(--sp-4); }
+.bio .mappa { aspect-ratio: 4 / 3; }
 .bio__titolo {
   font-size: 1.6rem;
   text-transform: uppercase;

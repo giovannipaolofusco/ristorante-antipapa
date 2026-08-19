@@ -1,11 +1,13 @@
 const contenitore = document.getElementById('mappa');
 
 if (contenitore) {
-  const COORDINATE = [13.4286531, 41.3586522];
+  const COORDINATE = [13.4288228, 41.3585599];
   const ZOOM = 16.5;
+  const LIMITI = [[13.4, 41.34], [13.46, 41.38]];
+  const INDICAZIONI = 'https://www.openstreetmap.org/?mlat=41.3585599&mlon=13.4288228#map=18/41.35856/13.42882';
 
   const avvia = async () => {
-    const [{ Map, Marker, Popup, NavigationControl, AttributionControl, addProtocol }, stile] = await Promise.all([
+    const [{ Map, Marker, NavigationControl, AttributionControl, addProtocol }, stile] = await Promise.all([
       import('/ristorante-antipapa/assets/libs/maplibre/maplibre-gl.mjs'),
       fetch('/ristorante-antipapa/assets/mappa/stile.json').then((r) => r.json())
     ]);
@@ -33,21 +35,25 @@ if (contenitore) {
       style: stile,
       center: COORDINATE,
       zoom: ZOOM,
-      minZoom: 12,
-      maxZoom: 16,
+      minZoom: 14,
+      maxZoom: 17,
+      maxBounds: LIMITI,
       attributionControl: false
     });
 
     mappa.addControl(new NavigationControl({ showCompass: false }), 'top-right');
     mappa.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
-    const segnaposto = document.createElement('button');
-    segnaposto.type = 'button';
-    segnaposto.className = 'mappa__marchio';
     const inglese = document.documentElement.lang === 'en';
+
+    const segnaposto = document.createElement('a');
+    segnaposto.className = 'mappa__marchio';
+    segnaposto.href = INDICAZIONI;
+    segnaposto.target = '_blank';
+    segnaposto.rel = 'noopener noreferrer';
     segnaposto.setAttribute('aria-label', inglese
-      ? 'Antipapa, Via Ippolito Dei Medici 7, Fondi — open details'
-      : 'Antipapa, Via Ippolito Dei Medici 7, Fondi — apri i dettagli');
+      ? 'Antipapa, Via Ippolito Dei Medici 7, Fondi — open directions in a new tab'
+      : 'Antipapa, Via Ippolito Dei Medici 7, Fondi — apri le indicazioni stradali in una nuova scheda');
 
     const marchio = document.createElement('img');
     marchio.src = '/ristorante-antipapa/assets/img/antipapa-logo.jpg';
@@ -56,32 +62,30 @@ if (contenitore) {
     marchio.height = 48;
     segnaposto.appendChild(marchio);
 
-    const scheda = new Popup({ offset: 34, closeButton: true, maxWidth: '250px' }).setHTML(
-      '<p class="scheda-mappa__nome">Antipapa</p>' +
-      '<p class="scheda-mappa__riga">Via Ippolito Dei Medici 7<br>04022 Fondi (LT)' +
-      (inglese ? ', Italy' : '') + '</p>' +
-      '<p class="scheda-mappa__riga"><a href="tel:+393514324634">+39 351 432 4634</a></p>' +
-      '<p class="scheda-mappa__riga"><a href="https://www.openstreetmap.org/?mlat=41.35865&amp;mlon=13.42865#map=17/41.35865/13.42865" target="_blank" rel="noopener noreferrer">' +
-      (inglese ? 'Directions' : 'Indicazioni stradali') + '</a></p>'
-    );
-
     new Marker({ element: segnaposto, anchor: 'bottom' })
       .setLngLat(COORDINATE)
-      .setPopup(scheda)
       .addTo(mappa);
 
+    const ATTESA_PRIMA_DI_RINUNCIARE = 5000;
     let sorgentePronta = false;
-    let rinunciato = false;
+    let verdetto = null;
 
     mappa.on('sourcedata', (evento) => {
-      if (evento.sourceId === 'protomaps' && evento.isSourceLoaded) sorgentePronta = true;
+      if (evento.sourceId !== 'protomaps' || !evento.isSourceLoaded) return;
+      sorgentePronta = true;
+      if (verdetto) {
+        window.clearTimeout(verdetto);
+        verdetto = null;
+      }
     });
 
     mappa.on('error', (evento) => {
-      if (sorgentePronta || rinunciato) return;
+      if (sorgentePronta || verdetto) return;
       if (evento && evento.sourceId && evento.sourceId !== 'protomaps') return;
-      rinunciato = true;
-      contenitore.remove();
+      verdetto = window.setTimeout(() => {
+        if (sorgentePronta) return;
+        contenitore.remove();
+      }, ATTESA_PRIMA_DI_RINUNCIARE);
     });
 
     mappa.on('load', () => contenitore.classList.add('mappa--pronta'));

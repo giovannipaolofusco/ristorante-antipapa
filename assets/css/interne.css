@@ -271,34 +271,6 @@
 .mappa__marchio:hover { transform: translateY(-3px); }
 .mappa__marchio:focus-visible { outline: 3px solid var(--vermiglio); outline-offset: 3px; border-radius: 6px; }
 
-.maplibregl-popup-content {
-  font-family: var(--testo);
-  border-radius: 6px;
-  padding: 0.9rem 1.1rem 0.9rem 0.9rem;
-  box-shadow: 0 6px 22px rgba(30, 20, 24, 0.28);
-}
-.scheda-mappa__nome {
-  font-family: var(--display);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 1.05rem;
-  color: var(--bordeaux);
-  margin: 0 0 0.4rem;
-}
-.scheda-mappa__riga {
-  margin: 0 0 0.35rem;
-  font-size: 0.88rem;
-  line-height: 1.45;
-  color: var(--inchiostro);
-}
-.scheda-mappa__riga:last-child { margin-bottom: 0; }
-.scheda-mappa__riga a { color: var(--bordeaux); }
-.maplibregl-popup-close-button {
-  font-size: 1.3rem;
-  color: var(--inchiostro);
-  padding: 0 0.4rem;
-}
-
 .mappa__didascalia {
   font-size: 0.9rem;
   margin: var(--sp-2) 0 0;

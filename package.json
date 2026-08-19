@@ -11,11 +11,13 @@
     "build": "npm run pulisci && npm run copia && npm run html && npm run js && npm run css && npm run img"
   },
   "devDependencies": {
-    "terser": "^5",
     "cssnano": "^8",
+    "html-minifier-terser": "^7",
+    "jsqr": "^1.4.0",
     "postcss": "^8",
     "postcss-cli": "^11",
-    "html-minifier-terser": "^7",
-    "sharp": "^0.35"
+    "qrcode": "^1.5.4",
+    "sharp": "^0.35",
+    "terser": "^5"
   }
 }

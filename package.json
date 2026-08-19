@@ -3,7 +3,7 @@
   "name": "antipapa-sito",
   "scripts": {
     "pulisci": "rm -rf dist",
-    "copia": "mkdir -p dist && cp -r assets .well-known dist/ && cp *.html _headers _redirects robots.txt sitemap.xml site.webmanifest llms.txt dist/",
+    "copia": "mkdir -p dist && cp -r assets .well-known en dist/ && cp *.html _headers _redirects robots.txt sitemap.xml site.webmanifest llms.txt dist/",
     "html": "html-minifier-terser --input-dir dist --output-dir dist --file-ext html --collapse-whitespace --remove-comments --remove-redundant-attributes --minify-css true --minify-js true",
     "js": "for f in dist/assets/js/*.js dist/assets/libs/cookieconsent/*.js; do terser \"$f\" --compress --mangle --output \"$f\"; done",
     "css": "postcss dist/assets/css/*.css dist/assets/libs/cookieconsent/*.css --use cssnano --no-map --replace",

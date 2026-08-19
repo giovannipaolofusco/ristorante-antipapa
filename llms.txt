@@ -10,6 +10,14 @@ Ristorante nel centro storico di Fondi (LT), aperto il 31 luglio 2024. Cucina it
 - [Contatti](https://antipapafondi.it/contatti.html): indirizzo, telefono, email, orari di apertura e modulo di contatto.
 - [Privacy & Cookie Policy](https://antipapafondi.it/privacy.html): informativa sul trattamento dei dati personali e sui cookie.
 
+## English version
+
+- [Home (EN)](https://antipapafondi.it/en/): introduction to the restaurant, three dishes from the current menu, opening hours and contact details.
+- [Menu (EN)](https://antipapafondi.it/en/menu.html): the full menu with allergen codes for every dish and the complete key to the fourteen allergens.
+- [About us (EN)](https://antipapafondi.it/en/about-us.html): how the place started and how the kitchen works.
+- [Contact (EN)](https://antipapafondi.it/en/contact.html): address, phone, email, opening hours, map and contact form.
+- [Privacy & Cookie Policy (EN)](https://antipapafondi.it/en/privacy-policy.html): information on the processing of personal data and on cookies.
+
 ## Informazioni pratiche
 
 - Indirizzo: Via Ippolito Dei Medici 7, 04022 Fondi (LT), Italia.
@@ -17,3 +25,4 @@ Ristorante nel centro storico di Fondi (LT), aperto il 31 luglio 2024. Cucina it
 - Email: antipapafondi@gmail.com.
 - Orari: lunedì, martedì, giovedì, venerdì, sabato e domenica, 12:30-15:30 e 19:30-23:00. Mercoledì chiuso.
 - Prenotazioni: per telefono o tramite il modulo nella pagina Contatti.
+- Lingue del sito: italiano (principale) e inglese, sotto /en/.

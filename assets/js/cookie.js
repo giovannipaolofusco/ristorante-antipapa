@@ -23,7 +23,7 @@ CookieConsent.run({
     }
   },
   language: {
-    default: 'it',
+    default: document.documentElement.lang === 'en' ? 'en' : 'it',
     translations: {
       it: {
         consentModal: {
@@ -51,25 +51,54 @@ CookieConsent.run({
               description: 'Servono al funzionamento del sito e non possono essere disattivati. In questo momento ne esiste uno solo: quello che memorizza la scelta espressa in questo pannello, con durata di sei mesi.',
               linkedCategory: 'necessari',
               cookieTable: {
-                headers: {
-                  name: 'Nome',
-                  domain: 'Dominio',
-                  desc: 'Finalità',
-                  exp: 'Durata'
-                },
+                headers: { name: 'Nome', domain: 'Dominio', desc: 'Finalità', exp: 'Durata' },
                 body: [
-                  {
-                    name: 'cc_cookie',
-                    domain: 'antipapafondi.it',
-                    desc: 'Memorizza la scelta espressa sul banner cookie.',
-                    exp: '6 mesi'
-                  }
+                  { name: 'cc_cookie', domain: 'antipapafondi.it', desc: 'Memorizza la scelta espressa sul banner cookie.', exp: '6 mesi' }
                 ]
               }
             },
             {
               title: 'I tuoi diritti',
               description: 'Puoi rivedere questa scelta in qualsiasi momento dal pulsante in fondo alla <a href="/privacy.html">Privacy &amp; Cookie Policy</a>, e cancellare i cookie già memorizzati dalle impostazioni del browser.'
+            }
+          ]
+        }
+      },
+      en: {
+        consentModal: {
+          title: 'This site uses technical cookies only',
+          description: 'We use a single cookie, which remembers this choice of yours so the banner is not shown to you on every visit. We use no profiling cookies, we collect no analytics and we load no third-party content. It is all set out in our <a href="/en/privacy-policy.html">Privacy &amp; Cookie Policy</a>.',
+          acceptAllBtn: 'Accept',
+          acceptNecessaryBtn: 'Decline',
+          showPreferencesBtn: 'Manage preferences',
+          closeIconLabel: 'Decline and close'
+        },
+        preferencesModal: {
+          title: 'Cookie preferences',
+          acceptAllBtn: 'Accept',
+          acceptNecessaryBtn: 'Decline',
+          savePreferencesBtn: 'Save preferences',
+          closeIconLabel: 'Close',
+          serviceCounterLabel: 'Service|Services',
+          sections: [
+            {
+              title: 'How we use cookies',
+              description: 'This website sets technical cookies only, which Article 122 of the Italian Privacy Code does not make subject to prior consent. There are no profiling cookies, tracking pixels or analytics tools.'
+            },
+            {
+              title: 'Strictly necessary cookies',
+              description: 'These are needed for the site to work and cannot be switched off. At present there is only one: the cookie storing the choice you make in this panel, which lasts six months.',
+              linkedCategory: 'necessari',
+              cookieTable: {
+                headers: { name: 'Name', domain: 'Domain', desc: 'Purpose', exp: 'Duration' },
+                body: [
+                  { name: 'cc_cookie', domain: 'antipapafondi.it', desc: 'Stores the choice made in the cookie banner.', exp: '6 months' }
+                ]
+              }
+            },
+            {
+              title: 'Your rights',
+              description: 'You can review this choice at any time from the button at the foot of the <a href="/en/privacy-policy.html">Privacy &amp; Cookie Policy</a>, and delete cookies already stored through your browser settings.'
             }
           ]
         }

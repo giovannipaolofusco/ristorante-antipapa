@@ -31,7 +31,10 @@ if (contenitore) {
     const segnaposto = document.createElement('button');
     segnaposto.type = 'button';
     segnaposto.className = 'mappa__marchio';
-    segnaposto.setAttribute('aria-label', 'Antipapa, Via Ippolito Dei Medici 7, Fondi — apri i dettagli');
+    const inglese = document.documentElement.lang === 'en';
+    segnaposto.setAttribute('aria-label', inglese
+      ? 'Antipapa, Via Ippolito Dei Medici 7, Fondi — open details'
+      : 'Antipapa, Via Ippolito Dei Medici 7, Fondi — apri i dettagli');
 
     const marchio = document.createElement('img');
     marchio.src = '/assets/img/antipapa-logo.jpg';
@@ -42,9 +45,11 @@ if (contenitore) {
 
     const scheda = new Popup({ offset: 34, closeButton: true, maxWidth: '250px' }).setHTML(
       '<p class="scheda-mappa__nome">Antipapa</p>' +
-      '<p class="scheda-mappa__riga">Via Ippolito Dei Medici 7<br>04022 Fondi (LT)</p>' +
-      '<p class="scheda-mappa__riga"><a href="tel:+393514324634">351 432 4634</a></p>' +
-      '<p class="scheda-mappa__riga"><a href="https://www.openstreetmap.org/?mlat=41.35865&amp;mlon=13.42865#map=17/41.35865/13.42865" target="_blank" rel="noopener noreferrer">Indicazioni stradali</a></p>'
+      '<p class="scheda-mappa__riga">Via Ippolito Dei Medici 7<br>04022 Fondi (LT)' +
+      (inglese ? ', Italy' : '') + '</p>' +
+      '<p class="scheda-mappa__riga"><a href="tel:+393514324634">+39 351 432 4634</a></p>' +
+      '<p class="scheda-mappa__riga"><a href="https://www.openstreetmap.org/?mlat=41.35865&amp;mlon=13.42865#map=17/41.35865/13.42865" target="_blank" rel="noopener noreferrer">' +
+      (inglese ? 'Directions' : 'Indicazioni stradali') + '</a></p>'
     );
 
     new Marker({ element: segnaposto, anchor: 'bottom' })

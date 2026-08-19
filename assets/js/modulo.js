@@ -3,7 +3,15 @@ const modulo = document.querySelector('.modulo__form');
 if (modulo) {
   const esito = document.getElementById('esito-modulo');
 
-  const messaggi = {
+  const inglese = document.documentElement.lang === 'en';
+
+  const messaggi = inglese ? {
+    nome: 'We need a name, so we know who we are replying to.',
+    email: 'Please check the email address: without it we cannot reply.',
+    telefono: 'That number does not look valid. You can also leave it empty.',
+    messaggio: 'Tell us what you need, even in one line.',
+    privacy: 'To send the message we need your consent to process the data.'
+  } : {
     nome: 'Serve un nome per sapere a chi rispondere.',
     email: 'Controlla l\'indirizzo email: senza, non possiamo risponderti.',
     telefono: 'Il numero non sembra valido. Puoi anche lasciarlo vuoto.',
@@ -49,9 +57,15 @@ if (modulo) {
     if (esito) {
       esito.hidden = false;
       esito.className = 'modulo__esito modulo__esito--ko';
-      esito.textContent = invalidi.length === 1
-        ? 'Manca un campo: controlla quello segnalato qui sopra.'
-        : `Mancano ${invalidi.length} campi: controlla quelli segnalati qui sopra.`;
+      if (inglese) {
+        esito.textContent = invalidi.length === 1
+          ? 'One field is missing: please check the one flagged above.'
+          : `${invalidi.length} fields are missing: please check the ones flagged above.`;
+      } else {
+        esito.textContent = invalidi.length === 1
+          ? 'Manca un campo: controlla quello segnalato qui sopra.'
+          : `Mancano ${invalidi.length} campi: controlla quelli segnalati qui sopra.`;
+      }
     }
   });
 }

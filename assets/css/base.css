@@ -257,3 +257,25 @@ h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; }
     scroll-behavior: auto !important;
   }
 }
+
+.lingue {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin: 0;
+  font-family: var(--display);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+}
+.lingue__voce {
+  padding: 0.25rem 0.45rem;
+  text-decoration: none;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+.lingue__voce:hover { opacity: 1; color: var(--vermiglio); }
+.lingue__voce--attiva {
+  opacity: 1;
+  color: var(--vermiglio);
+  border: 1px solid currentColor;
+}

@@ -18,7 +18,8 @@ const ANTEPRIMA = 'https://giovannipaolofusco.github.io/ristorante-antipapa/menu
 const richieste = [
   { nome: 'antipapa-menu-qr', url: DEFINITIVO, scuro: BORDEAUX, chiaro: AVORIO, svg: true },
   { nome: 'antipapa-menu-qr-bn', url: DEFINITIVO, scuro: NERO, chiaro: BIANCO, svg: true },
-  { nome: 'antipapa-menu-qr-anteprima', url: ANTEPRIMA, scuro: BORDEAUX, chiaro: AVORIO, svg: false }
+  { nome: 'antipapa-menu-qr-anteprima', url: ANTEPRIMA, scuro: BORDEAUX, chiaro: AVORIO, svg: true },
+  { nome: 'antipapa-menu-qr-anteprima-bn', url: ANTEPRIMA, scuro: NERO, chiaro: BIANCO, svg: true }
 ];
 
 await mkdir(CARTELLA, { recursive: true });

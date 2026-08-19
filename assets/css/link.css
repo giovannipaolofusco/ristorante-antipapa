@@ -106,7 +106,18 @@ body.bio {
 
 .bio__blocco { margin-bottom: var(--sp-4); }
 .bio .mappa { aspect-ratio: 4 / 3; }
-.bio .lingue { justify-content: center; margin-top: var(--sp-2); }
+.bio .lingue {
+  position: absolute;
+  top: var(--sp-2);
+  right: var(--sp-2);
+  margin: 0;
+  z-index: 2;
+}
+.bio .lingue__voce--attiva {
+  background: var(--vermiglio);
+  color: var(--inchiostro);
+  border-color: transparent;
+}
 .bio__titolo {
   font-size: 1.6rem;
   text-transform: uppercase;

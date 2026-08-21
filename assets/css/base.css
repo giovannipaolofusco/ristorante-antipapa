@@ -98,6 +98,13 @@ h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; }
 .js-entra--destra { transform: translate3d(40px, 12px, 0); }
 .js-entra--sinistra.js-entra--dentro,
 .js-entra--destra.js-entra--dentro { transform: none; }
+.js-entra--esce,
+.js-entra--sinistra.js-entra--esce,
+.js-entra--destra.js-entra--esce {
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.3s var(--curva);
+}
 
 .ritardo-0 { --ritardo: 0ms; }
 .ritardo-60 { --ritardo: 60ms; }
@@ -256,6 +263,7 @@ h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .js-entra,
   .js-entra--dentro,
+  .js-entra--esce,
   .js-entra--sinistra,
   .js-entra--destra { opacity: 1; transform: none; transition: none; }
   .bottone:hover { transform: none; }

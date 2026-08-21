@@ -6,48 +6,28 @@ if (anti) {
   const motoRidotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!motoRidotto && parole.length > 1) {
-    const PAUSA = 900;
+    const PAUSA = 2000;
     const USCITA = 200;
-    const ATTESA_INIZIALE = PAUSA + 500;
     let indice = 0;
-    let timer = null;
 
     anti.classList.add('bio__anti--attiva');
     variabile.classList.add('bio__anti-parola--dentro');
 
-    const cambia = () => {
-      indice += 1;
-      variabile.classList.remove('bio__anti-parola--dentro');
-      timer = window.setTimeout(() => {
-        variabile.textContent = parole[indice];
-        variabile.classList.add('bio__anti-parola--dentro');
-        timer = indice < parole.length - 1 ? window.setTimeout(cambia, PAUSA) : null;
-      }, USCITA);
-    };
-
-    const avvia = () => {
-      window.clearTimeout(timer);
-      indice = 0;
-      variabile.textContent = parole[0];
+    const mostra = () => {
+      variabile.textContent = parole[indice];
       variabile.classList.add('bio__anti-parola--dentro');
-      timer = window.setTimeout(cambia, ATTESA_INIZIALE);
     };
 
-    avvia();
+    const cambia = () => {
+      indice = (indice + 1) % parole.length;
+      variabile.classList.remove('bio__anti-parola--dentro');
+      window.setTimeout(mostra, USCITA);
+    };
 
-    if ('IntersectionObserver' in window) {
-      let uscito = false;
-      const osservatore = new IntersectionObserver((voci) => {
-        voci.forEach((voce) => {
-          if (!voce.isIntersecting) {
-            uscito = true;
-          } else if (uscito) {
-            uscito = false;
-            avvia();
-          }
-        });
-      }, { threshold: 0 });
-      osservatore.observe(anti);
-    }
+    window.setInterval(cambia, PAUSA);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) mostra();
+    });
+    window.addEventListener('pageshow', mostra);
   }
 }

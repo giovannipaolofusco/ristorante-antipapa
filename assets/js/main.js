@@ -26,14 +26,16 @@ if (motoRidotto || !('IntersectionObserver' in window)) {
     voci.forEach((voce) => {
       if (voce.intersectionRatio >= SOGLIA || (voce.isIntersecting && piuAltoDelloSchermo(voce))) {
         voce.target.classList.add('js-entra--dentro');
-      } else if (!voce.isIntersecting) {
-        voce.target.classList.remove('js-entra--dentro');
+        osservatore.unobserve(voce.target);
       }
     });
   }, { threshold: [0, SOGLIA], rootMargin: `0px 0px -${MARGINE_BASSO * 100}% 0px` });
 
   daAnimare.forEach((elemento) => {
-    if (sopraLaPiega(elemento)) elemento.classList.add('js-entra--dentro');
+    if (sopraLaPiega(elemento)) {
+      elemento.classList.add('js-entra--dentro');
+      return;
+    }
     osservatore.observe(elemento);
   });
 }

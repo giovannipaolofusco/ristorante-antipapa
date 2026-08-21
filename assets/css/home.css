@@ -161,6 +161,8 @@
   .portata { grid-template-columns: 1.15fr 1fr; align-items: center; gap: var(--sp-5); margin-bottom: calc(var(--sp-5) * 1.5); }
   .portata--invertita .portata__immagine { order: 2; }
   .apertura, .manifesto, .anti, .carta, .storia { padding-left: var(--sp-4); padding-right: var(--sp-4); }
+  .nastro { padding: var(--sp-3) 0 0.35rem; }
+  .nastro__voce { line-height: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
